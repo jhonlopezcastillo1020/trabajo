@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center m-4">
+
+        <div *ngIf="!pregunta" class="alert alert-warning text-center">
+            <h4>Seleccione pregunta</h4>
+        </div>
+        <div *ngIf="pregunta">
+            <h4 class="mb-3">Pregunta seleccionada es la n&uacute;mero <strong>{{pregunta.id}}</strong></h4>
+
+            <p>¿ {{pregunta.texto}} ?</p>
+
+
+            <div *ngIf="pregunta.tipo === 'texto'">
+
+                <div class="mt-3">
+                    <label for="" class="form-label"></label>
+                    <textarea class="form-control" name="texto" id="textoInput" rows="3"></textarea>
+                </div>
+
+            </div>
+
+
+
+            <div *ngIf="pregunta.tipo === 'seleccion'">
+
+                <div class="mt-3">
+                    <label for="opcionSelect" class="form-label">Seleccione una opción:</label>
+                    <select class="form-select form-select-lg" id="opcionSelect">
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div *ngIf="pregunta.tipo === 'multiple'">
+
+                <div class="mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="respuesta1" id="multiple">
+                        <label class="form-check-label" for="multiple">
+                            respuesta
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="respuesta2" id="multiple">
+                        <label class="form-check-label" for="multiple">
+                            respuesta 2
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="pregunta.tipo === 'unica'">
+
+                <div class="mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="unica" id="unica" value="respuesta1">
+                        <label class="form-check-label" for="unica">
+                            Respuesta 1
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="unica" id="unica" value="respuesta2">
+                        <label class="form-check-label" for="unica">
+                            Respuesta 2
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="unica" id="unica" value="respuesta3">
+                        <label class="form-check-label" for="unica">
+                            Respuesta 3
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>

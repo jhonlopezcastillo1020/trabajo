@@ -1,0 +1,44 @@
+<div class="wrapper">
+    <!-- sidebar -->
+    <aside id="sidebar" [ngClass]="{collapsed: sidebarService.isCollapsed}">
+        <app-sidebar></app-sidebar>
+    </aside>
+    <!-- main component -->
+    <div class="main">
+        <app-navbar></app-navbar>
+        <main class="content px-3 py-2">
+            <div class="container-fluid">
+                <div class="mb-3">
+
+                    <h3>Encuesta</h3>
+
+
+                    <div class="row justify-content-center align-items-center g-2 mt-4">
+
+                        <div class="col-md-3 me-3">
+                            <div class="border encuenta-contenedor overflow-auto" >
+
+                                <h4 class="text-center mt-2">Lista de preguntas</h4>
+                                <app-seccion (evento)="onPregunta($event)"></app-seccion>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-8 me-3">
+                            <div class="border encuenta-contenedor">
+                                <app-pregunta [pregunta]="pregunta"></app-pregunta>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>

@@ -1,0 +1,55 @@
+<div class="h-100">
+  <div class="sidebar-logo">
+    <a [routerLink]="['/manager']">AppEncuesta</a>
+  </div>
+  <button class="btn" type="button" data-bs-theme="light" (click)="toggleSidebar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <!-- sidebar navigation -->
+  <ul class="sidebar-nav">
+    <li class="sidebar-header">
+      Configuración
+    </li>
+
+    <li class="sidebar-item">
+      <a [routerLink]="['/manager/encuesta']" class="sidebar-link">
+        <i class="fa-solid fa-list pe-2"></i>
+        Encuesta
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#pages" aria-expanded="false"
+        aria-controls="pages">
+        <i class="fa-regular fa-file-lines pe-2"></i>
+        Gestion Encuestas
+      </a>
+      <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#accordionExample">
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">Crear</a>
+
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">Gestion preguntas</a>
+
+        </li>
+        <li class="sidebar-item">
+          <a href="#" class="sidebar-link">Gestion sesión</a>
+
+        </li>
+
+      </ul>
+    </li>
+    <li class="sidebar-item">
+      <a [routerLink]="['/manager/encuesta']" class="sidebar-link">
+        <i class="fa-solid fa-sliders pe-2"></i>
+        Usuarios
+      </a>
+    </li>
+  </ul>
+
+  <div class="sidebar-bottom">
+      <span>Nombre de Usuario</span>
+  </div>
+</div>
